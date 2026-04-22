@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hermes AI - Assistant</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#ffdbd0",
+                        "surface-container-highest": "#32343e",
+                        "secondary": "#d1bcff",
+                        "primary-fixed": "#dae1ff",
+                        "primary-fixed-dim": "#b3c5ff",
+                        "surface-variant": "#32343e",
+                        "inverse-on-surface": "#2e303a",
+                        "on-surface-variant": "#c2c6d8",
+                        "surface-container-low": "#191b24",
+                        "surface-container": "#1d1f28",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed-variant": "#832600",
+                        "secondary-container": "#7000ff",
+                        "surface-container-lowest": "#0b0e16",
+                        "primary": "#b3c5ff",
+                        "tertiary-fixed-dim": "#ffb59d",
+                        "secondary-fixed-dim": "#d1bcff",
+                        "on-background": "#e1e2ee",
+                        "on-secondary": "#3c0090",
+                        "on-tertiary": "#5d1900",
+                        "outline-variant": "#424656",
+                        "on-tertiary-container": "#fff6f4",
+                        "on-surface": "#e1e2ee",
+                        "inverse-primary": "#0054d6",
+                        "on-tertiary-fixed": "#390c00",
+                        "on-primary": "#002b75",
+                        "error-container": "#93000a",
+                        "outline": "#8c90a1",
+                        "on-primary-fixed-variant": "#003fa4",
+                        "on-secondary-fixed": "#23005b",
+                        "error": "#ffb4ab",
+                        "surface-tint": "#b3c5ff",
+                        "on-primary-container": "#f8f7ff",
+                        "tertiary-container": "#cc4204",
+                        "primary-container": "#0066ff",
+                        "inverse-surface": "#e1e2ee",
+                        "on-error-container": "#ffdad6",
+                        "surface": "#10131c",
+                        "secondary-fixed": "#e9ddff",
+                        "on-secondary-fixed-variant": "#5700c9",
+                        "surface-bright": "#363943",
+                        "background": "#10131c",
+                        "tertiary": "#ffb59d",
+                        "on-primary-fixed": "#001849",
+                        "on-secondary-container": "#ddcdff",
+                        "surface-dim": "#10131c",
+                        "surface-container-high": "#272a33"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "lg": "24px",
+                        "margin_desktop": "40px",
+                        "base": "8px",
+                        "margin_mobile": "16px",
+                        "gutter": "24px",
+                        "xs": "4px",
+                        "md": "16px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "h3": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "h2": ["Inter"],
+                        "h1": ["Inter"],
+                        "body-md": ["Inter"],
+                        "mono-data": ["monospace"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "h3": ["20px", { "lineHeight": "28px", "letterSpacing": "0", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "h2": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "h1": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0", "fontWeight": "400" }],
+                        "mono-data": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased h-screen flex flex-col overflow-hidden">
+<!-- Top Navbar Mobile -->
+<header class="flex-none bg-surface/90 backdrop-blur-md border-b border-surface-container-high px-4 h-16 flex items-center justify-between z-40 lg:hidden">
+<button class="text-on-surface-variant hover:text-primary transition-colors flex items-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<div class="flex flex-col items-center">
+<h1 class="font-h3 text-h3 text-on-surface">Hermes AI</h1>
+<span class="font-label-caps text-label-caps text-primary">Quantum Analysis Active</span>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors flex items-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">more_vert</span>
+</button>
+</header>
+<!-- TopNavBar Desktop (Suppressed for focused chat, but keeping structure if needed on larger screens, though prompt specifies mobile UI primarily) -->
+<nav class="hidden lg:flex fixed top-0 w-full z-40 border-b border-surface-container-high bg-surface/90 backdrop-blur-md flex justify-between items-center h-16 px-6 w-full lg:pl-[304px]">
+<div class="flex items-center gap-4">
+<span class="font-h2 text-h2 text-on-surface font-bold tracking-tighter">Hermes AI</span>
+</div>
+<div class="flex items-center gap-6">
+<span class="font-body-md text-body-md text-on-surface-variant cursor-pointer hover:text-primary transition-all">Markets</span>
+<span class="font-body-md text-body-md text-on-surface-variant cursor-pointer hover:text-primary transition-all">Insights</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary cursor-pointer transition-all"><span class="material-symbols-outlined">smart_toy</span></button>
+<button class="text-on-surface-variant hover:text-primary cursor-pointer transition-all"><span class="material-symbols-outlined">notifications</span></button>
+<button class="text-on-surface-variant hover:text-primary cursor-pointer transition-all"><span class="material-symbols-outlined">account_circle</span></button>
+<button class="bg-primary-container text-on-primary-container px-4 py-2 rounded-DEFAULT font-label-caps text-label-caps">Connect Wallet</button>
+</div>
+</nav>
+<!-- Main Chat Area -->
+<main class="flex-1 overflow-y-auto p-4 flex flex-col gap-6 lg:ml-[280px] lg:pt-[88px] pb-32">
+<!-- System Message / Intro -->
+<div class="flex justify-center mt-4">
+<div class="bg-surface-container text-on-surface-variant font-label-caps text-label-caps px-4 py-2 rounded-full border border-surface-container-high">
+                Hermes AI Core Connected • 14:02 UTC
+            </div>
+</div>
+<!-- User Message -->
+<div class="flex flex-col items-end gap-1">
+<div class="bg-surface-container-high text-on-surface font-body-md text-body-md px-4 py-3 rounded-2xl rounded-tr-sm max-w-[85%] border border-surface-container-highest shadow-sm">
+                Analyze the current sentiment around $AAPL options expiring this Friday.
+            </div>
+<span class="font-label-caps text-label-caps text-on-surface-variant opacity-70">You • 14:03</span>
+</div>
+<!-- AI Response (Processing) -->
+<div class="flex flex-col items-start gap-1">
+<div class="flex items-center gap-2 mb-1">
+<div class="w-6 h-6 rounded-full bg-primary-container/20 flex items-center justify-center border border-primary-container/50">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</div>
+<span class="font-label-caps text-label-caps text-primary">Hermes AI analyzing...</span>
+</div>
+</div>
+<!-- AI Response (Complete with Data) -->
+<div class="flex flex-col items-start gap-2">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-primary-container flex items-center justify-center shadow-[0_0_10px_rgba(0,102,255,0.3)]">
+<span class="material-symbols-outlined text-on-primary-container text-sm" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface">Hermes AI</span>
+</div>
+<div class="bg-surface-container-low text-on-surface font-body-md text-body-md p-4 rounded-2xl rounded-tl-sm max-w-[90%] border border-surface-container shadow-[0_4px_20px_rgba(0,102,255,0.05)] relative overflow-hidden">
+<!-- Subtle glow effect for AI content -->
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-container to-secondary-container opacity-50"></div>
+<p class="mb-4">
+                    Based on options flow over the last 4 hours, sentiment for <span class="bg-success/10 text-success px-1 rounded font-mono-data">AAPL</span> is leaning slightly bullish for Friday's expiration.
+                </p>
+<!-- Data Insight Card inside chat -->
+<div class="bg-surface border border-outline-variant rounded-lg p-3 mb-4">
+<div class="flex justify-between items-center mb-2 border-b border-surface-container-high pb-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Vol/OI Ratio Focus</span>
+<span class="material-symbols-outlined text-outline text-sm">trending_up</span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<div>
+<span class="block font-label-caps text-label-caps text-on-surface-variant">Calls</span>
+<span class="font-mono-data text-mono-data text-success">68%</span>
+</div>
+<div>
+<span class="block font-label-caps text-label-caps text-on-surface-variant">Puts</span>
+<span class="font-mono-data text-mono-data text-error">32%</span>
+</div>
+</div>
+</div>
+<p>
+                    Notable institutional sweeping activity detected at the 185C strike. Proceed with standard volatility modeling?
+                </p>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant opacity-70">14:04</span>
+</div>
+</main>
+<!-- Bottom Input Area (Fixed) -->
+<div class="fixed bottom-0 left-0 w-full bg-surface-container/95 backdrop-blur-xl border-t border-surface-container-high lg:pl-[280px] z-50">
+<!-- Suggestion Chips -->
+<div class="flex overflow-x-auto gap-2 p-3 no-scrollbar">
+<button class="whitespace-nowrap bg-surface border border-outline-variant hover:border-primary text-on-surface font-label-caps text-label-caps px-4 py-2 rounded-full transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">show_chart</span>
+                Run Volatility Model
+            </button>
+<button class="whitespace-nowrap bg-surface border border-outline-variant hover:border-primary text-on-surface font-label-caps text-label-caps px-4 py-2 rounded-full transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">history</span>
+                Historical Context
+            </button>
+<button class="whitespace-nowrap bg-surface border border-outline-variant hover:border-primary text-on-surface font-label-caps text-label-caps px-4 py-2 rounded-full transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+                Risk Factors
+            </button>
+</div>
+<!-- Input Field -->
+<div class="px-4 pb-safe pt-1 pb-4">
+<div class="relative flex items-center bg-surface-container-low border border-surface-container-high focus-within:border-primary focus-within:shadow-[0_0_0_2px_rgba(0,102,255,0.2)] rounded-xl transition-all">
+<button class="p-3 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">add_circle</span>
+</button>
+<input class="flex-1 bg-transparent border-none text-on-surface font-body-md focus:ring-0 placeholder:text-on-surface-variant p-3" placeholder="Ask Hermes AI..." type="text"/>
+<button class="p-3 text-primary-container hover:text-primary-fixed transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">send</span>
+</button>
+</div>
+<div class="text-center mt-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant text-[10px]">Hermes AI can make mistakes. Verify important financial data.</span>
+</div>
+</div>
+</div>
+<!-- SideNavBar Desktop (Hidden on mobile, present for desktop context if expanded) -->
+<aside class="hidden lg:flex fixed left-0 top-0 h-full w-[280px] border-r border-surface-container-high bg-surface-container-lowest flex-col py-8 z-50">
+<div class="px-6 mb-8 flex items-center gap-3">
+<div class="w-8 h-8 bg-primary-container rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container">psychology</span>
+</div>
+<div>
+<h2 class="font-h3 text-h3 text-on-surface tracking-tighter">Hermes AI</h2>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Institutional Grade</span>
+</div>
+</div>
+<div class="px-4 mb-6">
+<button class="w-full bg-primary-container text-on-primary-container font-label-caps text-label-caps py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-inverse-primary transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+                New Trade
+            </button>
+</div>
+<nav class="flex-1 px-3 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">star</span>
+<span class="font-body-md text-body-md font-medium">Watchlist</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">show_chart</span>
+<span class="font-body-md text-body-md font-medium">Markets</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">pie_chart</span>
+<span class="font-body-md text-body-md font-medium">Portfolio</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-body-md text-body-md font-medium">Transactions</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-primary border-l-4 border-primary-container bg-primary-container/10 transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<span class="font-body-md text-body-md font-medium">AI Insights</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-body-md text-body-md font-medium">Settings</span>
+</a>
+</nav>
+<div class="mt-auto px-3 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-body-md text-body-md font-medium">Support</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">code</span>
+<span class="font-body-md text-body-md font-medium">API</span>
+</a>
+</div>
+</aside>
+</body></html>
