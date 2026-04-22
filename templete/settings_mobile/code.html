@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hermes AI - Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#ffdbd0",
+                        "surface-container-highest": "#32343e",
+                        "secondary": "#d1bcff",
+                        "primary-fixed": "#dae1ff",
+                        "primary-fixed-dim": "#b3c5ff",
+                        "surface-variant": "#32343e",
+                        "inverse-on-surface": "#2e303a",
+                        "on-surface-variant": "#c2c6d8",
+                        "surface-container-low": "#191b24",
+                        "surface-container": "#1d1f28",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed-variant": "#832600",
+                        "secondary-container": "#7000ff",
+                        "surface-container-lowest": "#0b0e16",
+                        "primary": "#b3c5ff",
+                        "tertiary-fixed-dim": "#ffb59d",
+                        "secondary-fixed-dim": "#d1bcff",
+                        "on-background": "#e1e2ee",
+                        "on-secondary": "#3c0090",
+                        "on-tertiary": "#5d1900",
+                        "outline-variant": "#424656",
+                        "on-tertiary-container": "#fff6f4",
+                        "on-surface": "#e1e2ee",
+                        "inverse-primary": "#0054d6",
+                        "on-tertiary-fixed": "#390c00",
+                        "on-primary": "#002b75",
+                        "error-container": "#93000a",
+                        "outline": "#8c90a1",
+                        "on-primary-fixed-variant": "#003fa4",
+                        "on-secondary-fixed": "#23005b",
+                        "error": "#ffb4ab",
+                        "surface-tint": "#b3c5ff",
+                        "on-primary-container": "#f8f7ff",
+                        "tertiary-container": "#cc4204",
+                        "primary-container": "#0066ff",
+                        "inverse-surface": "#e1e2ee",
+                        "on-error-container": "#ffdad6",
+                        "surface": "#10131c",
+                        "secondary-fixed": "#e9ddff",
+                        "on-secondary-fixed-variant": "#5700c9",
+                        "surface-bright": "#363943",
+                        "background": "#10131c",
+                        "tertiary": "#ffb59d",
+                        "on-primary-fixed": "#001849",
+                        "on-secondary-container": "#ddcdff",
+                        "surface-dim": "#10131c",
+                        "surface-container-high": "#272a33"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "lg": "24px",
+                        "margin_desktop": "40px",
+                        "base": "8px",
+                        "margin_mobile": "16px",
+                        "gutter": "24px",
+                        "xs": "4px",
+                        "md": "16px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "h3": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "h2": ["Inter"],
+                        "h1": ["Inter"],
+                        "body-md": ["Inter"],
+                        "mono-data": ["monospace"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "h3": ["20px", { "lineHeight": "28px", "letterSpacing": "0", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "h2": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "h1": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0", "fontWeight": "400" }],
+                        "mono-data": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .pb-safe { padding-bottom: env(safe-area-inset-bottom, 20px); }
+        .tap-highlight-transparent { -webkit-tap-highlight-color: transparent; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col">
+<!-- JSON Component: SideNavBar (Hidden on Mobile) -->
+<aside class="hidden lg:flex flex-col h-screen py-8 fixed left-0 top-0 h-full w-[280px] border-r bg-slate-950 border-slate-800 flat no-shadows z-50">
+<div class="px-6 mb-8 flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-blue-600 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-50 text-sm" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</div>
+<div>
+<h2 class="text-xl font-black tracking-tighter text-slate-50">Hermes AI</h2>
+<p class="text-slate-400 text-xs">Institutional Grade</p>
+</div>
+</div>
+<div class="px-4 mb-6">
+<button class="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-md py-2 px-4 font-inter text-sm font-medium transition-colors">
+                New Trade
+            </button>
+</div>
+<nav class="flex-1 px-3 flex flex-col gap-1 font-inter antialiased text-sm font-medium tracking-tight">
+<a class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-400 hover:text-slate-100 hover:bg-slate-900 transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">star</span>
+                Watchlist
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-400 hover:text-slate-100 hover:bg-slate-900 transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">show_chart</span>
+                Markets
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-400 hover:text-slate-100 hover:bg-slate-900 transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">pie_chart</span>
+                Portfolio
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-400 hover:text-slate-100 hover:bg-slate-900 transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+                Transactions
+            </a>
+<!-- Active Tab -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-md text-blue-500 border-l-4 border-blue-600 bg-blue-600/5 hover:bg-slate-900 transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">settings</span>
+                Settings
+            </a>
+</nav>
+<div class="px-3 mt-auto flex flex-col gap-1 font-inter antialiased text-sm font-medium tracking-tight">
+<a class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-400 hover:text-slate-100 hover:bg-slate-900 transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">help</span>
+                Support
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-400 hover:text-slate-100 hover:bg-slate-900 transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">code</span>
+                API
+            </a>
+</div>
+</aside>
+<!-- JSON Component: TopNavBar -->
+<header class="fixed top-0 w-full z-40 border-b flex justify-between items-center h-16 px-6 lg:pl-[304px] bg-slate-950/80 backdrop-blur-md border-slate-800 shadow-sm font-inter text-sm">
+<div class="flex items-center gap-6">
+<div class="text-lg font-bold text-slate-50 lg:hidden">Hermes AI</div>
+<div class="hidden md:flex items-center gap-4 text-slate-400">
+<span class="material-symbols-outlined cursor-pointer hover:text-blue-400 transition-all">search</span>
+<nav class="flex gap-4">
+<a class="hover:text-blue-400 transition-all cursor-pointer" href="#">Markets</a>
+<a class="hover:text-blue-400 transition-all cursor-pointer" href="#">Insights</a>
+</nav>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden md:block text-blue-600 hover:text-blue-400 transition-all cursor-pointer font-semibold">
+                Connect Wallet
+            </button>
+<div class="flex items-center gap-3 text-slate-400">
+<span class="material-symbols-outlined cursor-pointer hover:text-blue-400 transition-all">smart_toy</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-blue-400 transition-all">notifications</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-blue-400 transition-all text-blue-500 font-semibold" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 pt-[88px] pb-[100px] lg:pl-[304px] px-margin_mobile md:px-margin_desktop w-full max-w-5xl mx-auto flex flex-col gap-lg">
+<div class="flex items-center justify-between">
+<h1 class="font-h1 text-h1 text-on-surface tracking-tight">Settings</h1>
+</div>
+<!-- Personal Information Card (Optimized Form Inputs) -->
+<section class="bg-surface-container rounded-xl border border-outline-variant p-lg flex flex-col gap-lg shadow-sm">
+<div>
+<h2 class="font-h3 text-h3 text-on-surface mb-xs">Personal Information</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Update your institutional profile and contact details.</p>
+</div>
+<div class="flex flex-col md:flex-row gap-lg items-start">
+<!-- Avatar Upload -->
+<div class="flex flex-col items-center gap-sm shrink-0">
+<div class="w-20 h-20 rounded-full bg-surface-container-high border border-outline-variant flex items-center justify-center overflow-hidden relative group cursor-pointer">
+<img alt="Profile Avatar" class="w-full h-full object-cover" data-alt="Professional headshot of a person in a dark suit against a neutral background, high contrast, corporate style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBfh41yrkSF12xnsYtFqxjw3uYPFsoAI-UFPoeKoAtn-ZF2DGKxF19wAzOo6tvREUq4pDg9NX-aNUN8VPd2XAjcZm2UYq3GRfORb65Mfy9u828LpZ5A_zUmeSrlUKRWqH3vwOwLGW7MhkjhSADpX8cJ3HQfuSeRkgJAy7J9HWeUIBLj_2oNC1GGJe1Bg0lqvA2fVR4_oA5jQAxfu1KXIhXXbec5-wgfja0Jju22ciYDhw-Lx_jFTP-O5RkQHnHMeZ19rDc0gXOx6I"/>
+<div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-white">photo_camera</span>
+</div>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Edit Photo</span>
+</div>
+<!-- Form Fields -->
+<form class="flex-1 w-full flex flex-col gap-md">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="flex flex-col gap-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">First Name</label>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-md px-md py-[10px] font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all" type="text" value="Alexander"/>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Last Name</label>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-md px-md py-[10px] font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all" type="text" value="Sterling"/>
+</div>
+</div>
+<!-- Input Error State -->
+<div class="flex flex-col gap-xs mt-sm">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Institutional Email</label>
+<input class="w-full bg-surface-container-low border border-error rounded-md px-md py-[10px] font-body-md text-body-md text-on-surface focus:outline-none focus:border-error focus:ring-1 focus:ring-error transition-all" type="email" value="alex.sterling@hermes"/>
+<p class="font-body-md text-[12px] text-error flex items-center gap-xs mt-1">
+<span class="material-symbols-outlined text-[14px]">error</span>
+                            Please enter a valid top-level domain (e.g., .com, .io).
+                        </p>
+</div>
+<div class="flex justify-end mt-sm">
+<button class="bg-primary-container text-on-primary-container font-h3 text-body-md py-[10px] px-lg rounded-md hover:bg-inverse-primary transition-colors" type="button">
+                            Save Changes
+                        </button>
+</div>
+</form>
+</div>
+</section>
+<!-- List-based Navigation Categories -->
+<section class="flex flex-col gap-sm">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest px-xs">Preferences</h3>
+<div class="bg-surface-container rounded-xl border border-outline-variant flex flex-col overflow-hidden shadow-sm">
+<button class="w-full flex items-center justify-between px-lg py-md border-b border-outline-variant hover:bg-surface-container-high transition-colors text-left group">
+<div class="flex items-center gap-md">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center group-hover:bg-primary-container/20 transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary-container">shield_lock</span>
+</div>
+<div>
+<span class="block font-h3 text-body-lg text-on-surface">Security &amp; Authentication</span>
+<span class="block font-body-md text-[13px] text-on-surface-variant mt-0.5">Password, 2FA, Active Sessions</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between px-lg py-md border-b border-outline-variant hover:bg-surface-container-high transition-colors text-left group">
+<div class="flex items-center gap-md">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center group-hover:bg-primary-container/20 transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary-container">notifications_active</span>
+</div>
+<div>
+<span class="block font-h3 text-body-lg text-on-surface">Alerts &amp; Notifications</span>
+<span class="block font-body-md text-[13px] text-on-surface-variant mt-0.5">Price alerts, execution summaries</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between px-lg py-md border-b border-outline-variant hover:bg-surface-container-high transition-colors text-left group relative overflow-hidden">
+<!-- AI Glow Effect -->
+<div class="absolute inset-0 bg-primary-container/5 opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-md"></div>
+<div class="flex items-center gap-md relative z-10">
+<div class="w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center shadow-[0_0_15px_rgba(0,102,255,0.2)]">
+<span class="material-symbols-outlined text-primary-container">psychology</span>
+</div>
+<div>
+<span class="block font-h3 text-body-lg text-on-surface">AI Synthesis Engine</span>
+<span class="block font-body-md text-[13px] text-on-surface-variant mt-0.5">Risk models, predictive data layers</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant relative z-10">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between px-lg py-md border-b border-outline-variant hover:bg-surface-container-high transition-colors text-left group">
+<div class="flex items-center gap-md">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center group-hover:bg-primary-container/20 transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary-container">account_balance_wallet</span>
+</div>
+<div>
+<span class="block font-h3 text-body-lg text-on-surface">Connected Wallets</span>
+<span class="block font-body-md text-[13px] text-on-surface-variant mt-0.5">Manage exchange APIs and Web3 wallets</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between px-lg py-md hover:bg-surface-container-high transition-colors text-left group">
+<div class="flex items-center gap-md">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center group-hover:bg-primary-container/20 transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary-container">palette</span>
+</div>
+<div>
+<span class="block font-h3 text-body-lg text-on-surface">Appearance</span>
+<span class="block font-body-md text-[13px] text-on-surface-variant mt-0.5">Dark mode enforced</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</button>
+</div>
+</section>
+<!-- Destructive Action Card -->
+<section class="mt-md">
+<div class="bg-surface-container-lowest border border-error-container/50 rounded-xl p-md flex flex-col md:flex-row items-center justify-between gap-md">
+<div>
+<h3 class="font-h3 text-body-lg text-error">Terminate Account</h3>
+<p class="font-body-md text-[13px] text-on-surface-variant mt-1">Permanently delete your profile and all associated trade history. This action cannot be undone.</p>
+</div>
+<button class="w-full md:w-auto px-lg py-[10px] rounded-md border border-error text-error font-h3 text-body-md hover:bg-error/10 transition-colors whitespace-nowrap">
+                    Delete Account
+                </button>
+</div>
+</section>
+</main>
+<!-- JSON Component: BottomNavBar -->
+<nav class="lg:hidden flex justify-around items-center h-20 pb-safe px-4 fixed bottom-0 w-full z-50 border-t bg-slate-950/95 backdrop-blur-lg border-slate-800 shadow-[0_-4px_20px_rgba(0,0,0,0.5)] text-[10px] font-medium font-inter uppercase tracking-widest tap-highlight-transparent">
+<a class="flex flex-col items-center gap-1 text-slate-500 active:bg-slate-900 rounded-lg p-2 transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">star</span>
+            Watchlist
+        </a>
+<a class="flex flex-col items-center gap-1 text-slate-500 active:bg-slate-900 rounded-lg p-2 transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">pie_chart</span>
+            Portfolio
+        </a>
+<a class="flex flex-col items-center gap-1 text-slate-500 active:bg-slate-900 rounded-lg p-2 transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">psychology</span>
+            AI Insights
+        </a>
+<!-- Active Tab -->
+<a class="flex flex-col items-center gap-1 text-blue-500 active:bg-slate-900 rounded-lg p-2 transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">settings</span>
+            Settings
+        </a>
+</nav>
+</body></html>
