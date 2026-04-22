@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hermes AI - Stock Detail (AAPL)</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#ffdbd0",
+                        "surface-container-highest": "#32343e",
+                        "secondary": "#d1bcff",
+                        "primary-fixed": "#dae1ff",
+                        "primary-fixed-dim": "#b3c5ff",
+                        "surface-variant": "#32343e",
+                        "inverse-on-surface": "#2e303a",
+                        "on-surface-variant": "#c2c6d8",
+                        "surface-container-low": "#191b24",
+                        "surface-container": "#1d1f28",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed-variant": "#832600",
+                        "secondary-container": "#7000ff",
+                        "surface-container-lowest": "#0b0e16",
+                        "primary": "#b3c5ff",
+                        "tertiary-fixed-dim": "#ffb59d",
+                        "secondary-fixed-dim": "#d1bcff",
+                        "on-background": "#e1e2ee",
+                        "on-secondary": "#3c0090",
+                        "on-tertiary": "#5d1900",
+                        "outline-variant": "#424656",
+                        "on-tertiary-container": "#fff6f4",
+                        "on-surface": "#e1e2ee",
+                        "inverse-primary": "#0054d6",
+                        "on-tertiary-fixed": "#390c00",
+                        "on-primary": "#002b75",
+                        "error-container": "#93000a",
+                        "outline": "#8c90a1",
+                        "on-primary-fixed-variant": "#003fa4",
+                        "on-secondary-fixed": "#23005b",
+                        "error": "#ffb4ab",
+                        "surface-tint": "#b3c5ff",
+                        "on-primary-container": "#f8f7ff",
+                        "tertiary-container": "#cc4204",
+                        "primary-container": "#0066ff",
+                        "inverse-surface": "#e1e2ee",
+                        "on-error-container": "#ffdad6",
+                        "surface": "#10131c",
+                        "secondary-fixed": "#e9ddff",
+                        "on-secondary-fixed-variant": "#5700c9",
+                        "surface-bright": "#363943",
+                        "background": "#10131c",
+                        "tertiary": "#ffb59d",
+                        "on-primary-fixed": "#001849",
+                        "on-secondary-container": "#ddcdff",
+                        "surface-dim": "#10131c",
+                        "surface-container-high": "#272a33"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "lg": "24px",
+                        "margin_desktop": "40px",
+                        "base": "8px",
+                        "margin_mobile": "16px",
+                        "gutter": "24px",
+                        "xs": "4px",
+                        "md": "16px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "h3": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "h2": ["Inter"],
+                        "h1": ["Inter"],
+                        "body-md": ["Inter"],
+                        "mono-data": ["monospace"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "h3": ["20px", { "lineHeight": "28px", "letterSpacing": "0", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "h2": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "h1": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0", "fontWeight": "400" }],
+                        "mono-data": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md antialiased pb-24">
+<!-- Top Navigation (Task-focused, suppressed main nav) -->
+<header class="fixed top-0 w-full z-40 bg-slate-950/80 backdrop-blur-md border-b border-slate-800 flex justify-between items-center h-16 px-4">
+<button class="text-slate-400 hover:text-blue-400 transition-all flex items-center justify-center w-10 h-10 rounded-full">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="flex flex-col items-center">
+<h1 class="font-h3 text-h3 text-slate-50">AAPL</h1>
+<span class="font-label-caps text-label-caps text-slate-400">Apple Inc.</span>
+</div>
+<button class="text-slate-400 hover:text-blue-400 transition-all flex items-center justify-center w-10 h-10 rounded-full">
+<span class="material-symbols-outlined">star_border</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-20 px-margin_mobile flex flex-col gap-md">
+<!-- Header Pricing Details -->
+<section class="flex flex-col gap-xs pt-sm">
+<div class="flex items-baseline gap-sm">
+<span class="font-h1 text-h1 text-on-surface tracking-tighter">$189.43</span>
+<span class="font-mono-data text-mono-data text-emerald-400">+1.24 (0.65%)</span>
+</div>
+<span class="font-body-md text-body-md text-slate-400">Market Closed • Dec 12, 4:00 PM EST</span>
+</section>
+<!-- Interactive Chart Placeholder -->
+<section class="h-[280px] w-full rounded-lg bg-surface-container border border-outline-variant relative overflow-hidden flex flex-col p-4 shadow-sm">
+<div class="flex justify-between items-center mb-4">
+<div class="flex gap-2">
+<button class="font-label-caps text-label-caps text-slate-400 px-2 py-1 rounded bg-surface-container-high">1D</button>
+<button class="font-label-caps text-label-caps text-slate-400 px-2 py-1 rounded bg-surface-container-high">1W</button>
+<button class="font-label-caps text-label-caps text-blue-500 px-2 py-1 rounded bg-blue-600/10 border border-blue-600/20">1M</button>
+<button class="font-label-caps text-label-caps text-slate-400 px-2 py-1 rounded bg-surface-container-high">3M</button>
+<button class="font-label-caps text-label-caps text-slate-400 px-2 py-1 rounded bg-surface-container-high">1Y</button>
+</div>
+<button class="text-slate-400 hover:text-slate-200">
+<span class="material-symbols-outlined text-[18px]">fullscreen</span>
+</button>
+</div>
+<!-- Simulated Chart Area -->
+<div class="flex-grow w-full relative">
+<div class="absolute inset-0 bg-gradient-to-t from-blue-600/5 to-transparent"></div>
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 100 100">
+<polyline fill="none" points="0,80 10,75 20,85 30,60 40,70 50,40 60,50 70,30 80,45 90,20 100,10" stroke="#0066FF" stroke-width="2"></polyline>
+</svg>
+<!-- Simulated Tooltip -->
+<div class="absolute top-[20px] left-[70%] transform -translate-x-1/2 -translate-y-full bg-surface-container-highest border border-outline-variant px-2 py-1 rounded text-xs font-mono-data text-on-surface whitespace-nowrap">
+                     $185.20 <span class="text-slate-400 ml-1">Nov 28</span>
+</div>
+<!-- Simulated Active Line -->
+<div class="absolute top-0 bottom-0 left-[70%] border-l border-dashed border-outline-variant"></div>
+</div>
+</section>
+<!-- Tab Navigation -->
+<nav class="flex border-b border-outline-variant gap-lg overflow-x-auto no-scrollbar">
+<button class="pb-2 font-body-md text-body-md text-slate-400 hover:text-slate-200 whitespace-nowrap">Chart &amp; Data</button>
+<button class="pb-2 font-body-md text-body-md text-blue-500 border-b-2 border-blue-600 font-medium whitespace-nowrap flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-blue-500" style="font-variation-settings: 'FILL' 1;">psychology</span>
+                AI Insights
+            </button>
+<button class="pb-2 font-body-md text-body-md text-slate-400 hover:text-slate-200 whitespace-nowrap">Trade History</button>
+</nav>
+<!-- AI Insights Content Panel (Glassmorphic & Elevated) -->
+<section class="flex flex-col gap-4 py-2">
+<!-- Sentiment Card -->
+<div class="p-4 rounded-lg bg-surface-container border border-blue-600/30 shadow-[0_4px_20px_rgba(0,102,255,0.05)] relative overflow-hidden backdrop-blur-sm">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-6xl text-blue-500">memory</span>
+</div>
+<div class="flex items-center gap-2 mb-3 relative z-10">
+<span class="material-symbols-outlined text-blue-500">analytics</span>
+<h3 class="font-h3 text-h3 text-on-surface">Hermes Sentiment</h3>
+</div>
+<div class="flex items-end gap-3 mb-2 relative z-10">
+<span class="font-h2 text-h2 text-emerald-400">Bullish</span>
+<span class="font-mono-data text-mono-data text-slate-400 pb-1">Confidence: 87%</span>
+</div>
+<p class="font-body-md text-body-md text-slate-300 relative z-10">
+                    Recent earnings call highlighted stronger-than-expected services revenue growth. Supply chain constraints appear to be easing in primary manufacturing hubs.
+                </p>
+</div>
+<!-- Key Metrics Bento Grid -->
+<div class="grid grid-cols-2 gap-4">
+<div class="p-3 rounded-lg bg-surface-container border border-outline-variant">
+<span class="font-label-caps text-label-caps text-slate-400 block mb-1">Vol. (Avg)</span>
+<span class="font-mono-data text-mono-data text-on-surface">54.2M</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container border border-outline-variant">
+<span class="font-label-caps text-label-caps text-slate-400 block mb-1">P/E Ratio</span>
+<span class="font-mono-data text-mono-data text-on-surface">29.4</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container border border-outline-variant">
+<span class="font-label-caps text-label-caps text-slate-400 block mb-1">Market Cap</span>
+<span class="font-mono-data text-mono-data text-on-surface">2.98T</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container border border-outline-variant">
+<span class="font-label-caps text-label-caps text-slate-400 block mb-1">52W Range</span>
+<span class="font-mono-data text-mono-data text-on-surface">124.17 - 198.23</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Sticky Buy/Sell Actions -->
+<div class="fixed bottom-0 w-full z-50 bg-slate-950/95 backdrop-blur-lg border-t border-slate-800 p-4 pb-safe flex gap-4 shadow-[0_-4px_20px_rgba(0,0,0,0.5)]">
+<button class="flex-1 py-3 rounded-lg border border-slate-600 bg-transparent text-slate-200 font-h3 text-h3 text-center active:bg-slate-800 transition-colors">
+            Sell
+        </button>
+<button class="flex-1 py-3 rounded-lg bg-primary-container text-white font-h3 text-h3 text-center shadow-md active:scale-[0.98] transition-transform">
+            Buy
+        </button>
+</div>
+</body></html>
