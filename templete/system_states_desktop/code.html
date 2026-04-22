@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hermes AI - Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary-fixed-variant": "#5700c9",
+                        "outline": "#8c90a1",
+                        "on-primary-fixed": "#001849",
+                        "on-secondary-fixed": "#23005b",
+                        "on-primary": "#002b75",
+                        "on-tertiary-container": "#fff6f4",
+                        "tertiary-fixed-dim": "#ffb59d",
+                        "inverse-on-surface": "#2e303a",
+                        "inverse-surface": "#e1e2ee",
+                        "surface-container": "#1d1f28",
+                        "primary-container": "#0066ff",
+                        "background": "#10131c",
+                        "error-container": "#93000a",
+                        "surface-variant": "#32343e",
+                        "surface-dim": "#10131c",
+                        "on-error": "#690005",
+                        "secondary": "#d1bcff",
+                        "secondary-fixed-dim": "#d1bcff",
+                        "on-tertiary-fixed": "#390c00",
+                        "surface-bright": "#363943",
+                        "surface-tint": "#b3c5ff",
+                        "tertiary-container": "#cc4204",
+                        "surface": "#10131c",
+                        "on-tertiary": "#5d1900",
+                        "on-background": "#e1e2ee",
+                        "tertiary-fixed": "#ffdbd0",
+                        "primary-fixed-dim": "#b3c5ff",
+                        "primary": "#b3c5ff",
+                        "outline-variant": "#424656",
+                        "on-surface-variant": "#c2c6d8",
+                        "inverse-primary": "#0054d6",
+                        "on-tertiary-fixed-variant": "#832600",
+                        "tertiary": "#ffb59d",
+                        "secondary-fixed": "#e9ddff",
+                        "primary-fixed": "#dae1ff",
+                        "on-secondary": "#3c0090",
+                        "surface-container-highest": "#32343e",
+                        "on-primary-fixed-variant": "#003fa4",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-container": "#ddcdff",
+                        "secondary-container": "#7000ff",
+                        "on-surface": "#e1e2ee",
+                        "surface-container-lowest": "#0b0e16",
+                        "error": "#ffb4ab",
+                        "surface-container-low": "#191b24",
+                        "surface-container-high": "#272a33",
+                        "on-primary-container": "#f8f7ff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    spacing: {
+                        "xs": "4px",
+                        "md": "16px",
+                        "gutter": "24px",
+                        "sm": "8px",
+                        "base": "8px",
+                        "margin_desktop": "40px",
+                        "margin_mobile": "16px",
+                        "lg": "24px",
+                        "xl": "32px"
+                    },
+                    fontFamily: {
+                        "mono-data": ["monospace"],
+                        "h2": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "h1": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "h3": ["Inter"]
+                    },
+                    fontSize: {
+                        "mono-data": ["14px", { lineHeight: "20px", letterSpacing: "-0.01em", fontWeight: "500" }],
+                        "h2": ["24px", { lineHeight: "32px", letterSpacing: "-0.01em", fontWeight: "600" }],
+                        "body-md": ["14px", { lineHeight: "20px", letterSpacing: "0", fontWeight: "400" }],
+                        "body-lg": ["16px", { lineHeight: "24px", letterSpacing: "0", fontWeight: "400" }],
+                        "h1": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "label-caps": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600" }],
+                        "h3": ["20px", { lineHeight: "28px", letterSpacing: "0", fontWeight: "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased min-h-screen">
+<!-- TopNavBar (Desktop) -->
+<header class="hidden md:flex fixed top-0 right-0 w-[calc(100%-280px)] h-16 border-b border-[#30363D] z-40 bg-[#0B0E14]/80 backdrop-blur-md justify-between items-center px-8 font-['Inter'] text-sm font-medium">
+<div class="flex-1 flex items-center">
+<!-- Search on left -->
+<div class="relative w-64 text-slate-400 focus-within:text-[#0066FF] transition-colors">
+<span class="material-symbols-outlined absolute left-2 top-1/2 -translate-y-1/2 text-[20px]">search</span>
+<input class="w-full bg-[#161B22] border border-[#30363D] rounded-md py-1.5 pl-9 pr-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#0066FF]/50 focus:border-[#0066FF] transition-all text-sm" placeholder="Search assets..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4 text-slate-400">
+<button class="hover:text-white hover:bg-[#161B22] rounded-md px-2 py-1 flex items-center justify-center transition-all duration-200">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="hover:text-white hover:bg-[#161B22] rounded-md px-2 py-1 flex items-center justify-center transition-all duration-200 text-[#0066FF]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</button>
+<button class="hover:text-white hover:bg-[#161B22] rounded-md px-2 py-1 flex items-center justify-center transition-all duration-200">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</header>
+<!-- SideNavBar (Desktop) -->
+<nav class="hidden md:flex fixed left-0 top-0 h-full w-[280px] border-r border-[#30363D] bg-[#0B0E14] dark:bg-[#0B0E14] font-['Inter'] antialiased tracking-tight flex-col p-4 z-50">
+<div class="flex items-center gap-3 mb-8 px-2 pt-2">
+<div class="w-8 h-8 rounded-lg bg-[#0066FF]/20 flex items-center justify-center text-[#0066FF]">
+<span class="material-symbols-outlined">insights</span>
+</div>
+<div>
+<h1 class="text-xl font-bold tracking-tighter text-[#0066FF]">Hermes AI</h1>
+<p class="text-[10px] text-slate-500 uppercase tracking-wider font-semibold">Institutional Grade</p>
+</div>
+</div>
+<button class="w-full bg-[#0066FF] hover:bg-[#0054d6] text-white font-medium py-2 px-4 rounded-lg mb-8 transition-colors flex items-center justify-center gap-2 shadow-[0_4px_12px_rgba(0,102,255,0.2)]">
+<span class="material-symbols-outlined text-[18px]">add</span>
+            New Analysis
+        </button>
+<div class="flex-1 flex flex-col gap-1">
+<!-- Active Tab -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-r-lg text-[#0066FF] border-l-4 border-[#0066FF] bg-[#0066FF]/5 font-semibold opacity-90 scale-[0.98]" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+                Dashboard
+            </a>
+<!-- Inactive Tabs -->
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-slate-400 hover:text-white hover:bg-[#161B22] transition-all duration-200" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+                Portfolio
+            </a>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-slate-400 hover:text-white hover:bg-[#161B22] transition-all duration-200" href="#">
+<span class="material-symbols-outlined">psychology</span>
+                AI Insights
+            </a>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-slate-400 hover:text-white hover:bg-[#161B22] transition-all duration-200" href="#">
+<span class="material-symbols-outlined">insights</span>
+                Markets
+            </a>
+</div>
+<div class="mt-auto border-t border-[#30363D] pt-4 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-slate-400 hover:text-white hover:bg-[#161B22] transition-all duration-200" href="#">
+<span class="material-symbols-outlined">settings</span>
+                Settings
+            </a>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-slate-400 hover:text-white hover:bg-[#161B22] transition-all duration-200" href="#">
+<span class="material-symbols-outlined">help</span>
+                Support
+            </a>
+</div>
+</nav>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 border-t border-[#30363D] bg-[#161B22] dark:bg-[#161B22] shadow-[0_-4px_12px_rgba(0,0,0,0.5)] flex justify-around items-center h-16 pb-safe">
+<a class="flex flex-col items-center justify-center text-[#0066FF] w-full h-full active:bg-[#0066FF]/10 scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-[10px] font-medium font-['Inter']">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 w-full h-full active:bg-[#0066FF]/10 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1">account_balance_wallet</span>
+<span class="text-[10px] font-medium font-['Inter']">Portfolio</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 w-full h-full active:bg-[#0066FF]/10 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1">bolt</span>
+<span class="text-[10px] font-medium font-['Inter']">Insights</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 w-full h-full active:bg-[#0066FF]/10 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1">bar_chart</span>
+<span class="text-[10px] font-medium font-['Inter']">Markets</span>
+</a>
+</nav>
+<!-- Main Content Canvas -->
+<main class="md:ml-[280px] pt-4 md:pt-16 pb-20 md:pb-0 min-h-screen">
+<div class="p-margin_mobile md:p-margin_desktop max-w-7xl mx-auto">
+<div class="mb-lg">
+<h2 class="font-h2 text-h2 text-on-surface">Dashboard Overview</h2>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Loading State: Main Chart & Asset List Skeleton (Col Span 8) -->
+<div class="lg:col-span-8 flex flex-col gap-lg">
+<!-- Chart Skeleton Card -->
+<div class="bg-surface-container rounded-xl border border-outline-variant p-lg relative overflow-hidden">
+<!-- AI Glow indicator for loading AI context -->
+<div class="absolute -top-10 -right-10 w-32 h-32 bg-primary-container/10 rounded-full blur-2xl"></div>
+<div class="flex justify-between items-center mb-6">
+<div class="w-1/3 h-6 bg-surface-variant rounded-md"></div>
+<div class="w-24 h-6 bg-surface-variant rounded-md"></div>
+</div>
+<div class="flex items-end gap-4 mb-8">
+<div class="w-1/4 h-10 bg-surface-variant rounded-md"></div>
+<div class="w-16 h-6 bg-surface-variant rounded-md mb-1"></div>
+</div>
+<!-- Main Chart Area Placeholder -->
+<div class="w-full h-[240px] bg-surface-variant rounded-lg relative overflow-hidden flex items-end px-4 gap-2 pb-4">
+<!-- Simulated Chart Bars (Static Loading Representation) -->
+<div class="flex-1 bg-surface-bright h-[20%] rounded-t-sm opacity-50"></div>
+<div class="flex-1 bg-surface-bright h-[40%] rounded-t-sm opacity-50"></div>
+<div class="flex-1 bg-surface-bright h-[30%] rounded-t-sm opacity-50"></div>
+<div class="flex-1 bg-surface-bright h-[60%] rounded-t-sm opacity-50"></div>
+<div class="flex-1 bg-surface-bright h-[80%] rounded-t-sm opacity-50"></div>
+<div class="flex-1 bg-surface-bright h-[50%] rounded-t-sm opacity-50"></div>
+<div class="flex-1 bg-surface-bright h-[90%] rounded-t-sm opacity-50"></div>
+<div class="flex-1 bg-surface-bright h-[70%] rounded-t-sm opacity-50"></div>
+</div>
+</div>
+<!-- Asset List Skeleton Card -->
+<div class="bg-surface-container rounded-xl border border-outline-variant p-lg">
+<div class="w-40 h-5 bg-surface-variant rounded-md mb-6"></div>
+<div class="flex flex-col gap-4">
+<!-- Skeleton Row 1 -->
+<div class="flex items-center justify-between py-2 border-b border-surface-variant">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-variant"></div>
+<div class="flex flex-col gap-2">
+<div class="w-24 h-4 bg-surface-variant rounded-sm"></div>
+<div class="w-16 h-3 bg-surface-variant rounded-sm"></div>
+</div>
+</div>
+<div class="flex flex-col items-end gap-2">
+<div class="w-20 h-4 bg-surface-variant rounded-sm"></div>
+<div class="w-12 h-3 bg-surface-variant rounded-sm"></div>
+</div>
+</div>
+<!-- Skeleton Row 2 -->
+<div class="flex items-center justify-between py-2 border-b border-surface-variant">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-variant"></div>
+<div class="flex flex-col gap-2">
+<div class="w-32 h-4 bg-surface-variant rounded-sm"></div>
+<div class="w-20 h-3 bg-surface-variant rounded-sm"></div>
+</div>
+</div>
+<div class="flex flex-col items-end gap-2">
+<div class="w-24 h-4 bg-surface-variant rounded-sm"></div>
+<div class="w-14 h-3 bg-surface-variant rounded-sm"></div>
+</div>
+</div>
+<!-- Skeleton Row 3 -->
+<div class="flex items-center justify-between py-2 border-b border-surface-variant">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-variant"></div>
+<div class="flex flex-col gap-2">
+<div class="w-20 h-4 bg-surface-variant rounded-sm"></div>
+<div class="w-12 h-3 bg-surface-variant rounded-sm"></div>
+</div>
+</div>
+<div class="flex flex-col items-end gap-2">
+<div class="w-16 h-4 bg-surface-variant rounded-sm"></div>
+<div class="w-10 h-3 bg-surface-variant rounded-sm"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Empty State: Watchlist (Col Span 4) -->
+<div class="lg:col-span-4 h-full">
+<div class="bg-surface-container rounded-xl border border-outline-variant p-lg h-full flex flex-col">
+<div class="flex justify-between items-center mb-6 pb-4 border-b border-outline-variant/30">
+<h3 class="font-h3 text-h3 text-on-surface">Watchlist</h3>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</button>
+</div>
+<div class="flex-1 flex flex-col items-center justify-center text-center py-xl">
+<!-- Empty State Illustration Placeholder -->
+<div class="w-32 h-32 mb-6 rounded-full bg-surface-variant flex items-center justify-center relative shadow-[0_4px_20px_rgba(0,102,255,0.05)]">
+<span class="material-symbols-outlined text-[48px] text-outline-variant">visibility_off</span>
+<!-- Small decorative elements -->
+<div class="absolute top-2 right-2 w-3 h-3 bg-primary-container rounded-full opacity-50"></div>
+<div class="absolute bottom-4 left-4 w-2 h-2 bg-secondary rounded-full opacity-30"></div>
+</div>
+<h4 class="font-h3 text-h3 text-on-surface mb-2">No Assets Tracked</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 max-w-[240px]">
+                                Your watchlist is currently empty. Add your favorite stocks to receive real-time AI insights and alerts.
+                            </p>
+<button class="bg-primary-container hover:bg-inverse-primary text-white font-body-md text-body-md font-medium py-3 px-6 rounded-lg transition-colors w-full shadow-[0_2px_8px_rgba(0,102,255,0.2)]">
+                                Add your first stock
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>
