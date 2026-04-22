@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Weekly AI Investment Review | Hermes AI</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary-fixed-variant": "#5700c9",
+                        "outline": "#8c90a1",
+                        "on-primary-fixed": "#001849",
+                        "on-secondary-fixed": "#23005b",
+                        "on-primary": "#002b75",
+                        "on-tertiary-container": "#fff6f4",
+                        "tertiary-fixed-dim": "#ffb59d",
+                        "inverse-on-surface": "#2e303a",
+                        "inverse-surface": "#e1e2ee",
+                        "surface-container": "#1d1f28",
+                        "primary-container": "#0066ff",
+                        "background": "#10131c",
+                        "error-container": "#93000a",
+                        "surface-variant": "#32343e",
+                        "surface-dim": "#10131c",
+                        "on-error": "#690005",
+                        "secondary": "#d1bcff",
+                        "secondary-fixed-dim": "#d1bcff",
+                        "on-tertiary-fixed": "#390c00",
+                        "surface-bright": "#363943",
+                        "surface-tint": "#b3c5ff",
+                        "tertiary-container": "#cc4204",
+                        "surface": "#10131c",
+                        "on-tertiary": "#5d1900",
+                        "on-background": "#e1e2ee",
+                        "tertiary-fixed": "#ffdbd0",
+                        "primary-fixed-dim": "#b3c5ff",
+                        "primary": "#b3c5ff",
+                        "outline-variant": "#424656",
+                        "on-surface-variant": "#c2c6d8",
+                        "inverse-primary": "#0054d6",
+                        "on-tertiary-fixed-variant": "#832600",
+                        "tertiary": "#ffb59d",
+                        "secondary-fixed": "#e9ddff",
+                        "primary-fixed": "#dae1ff",
+                        "on-secondary": "#3c0090",
+                        "surface-container-highest": "#32343e",
+                        "on-primary-fixed-variant": "#003fa4",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-container": "#ddcdff",
+                        "secondary-container": "#7000ff",
+                        "on-surface": "#e1e2ee",
+                        "surface-container-lowest": "#0b0e16",
+                        "error": "#ffb4ab",
+                        "surface-container-low": "#191b24",
+                        "surface-container-high": "#272a33",
+                        "on-primary-container": "#f8f7ff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    spacing: {
+                        "xs": "4px",
+                        "md": "16px",
+                        "gutter": "24px",
+                        "sm": "8px",
+                        "base": "8px",
+                        "margin_desktop": "40px",
+                        "margin_mobile": "16px",
+                        "lg": "24px",
+                        "xl": "32px"
+                    },
+                    fontFamily: {
+                        "mono-data": ["monospace"],
+                        "h2": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "h1": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "h3": ["Inter"]
+                    },
+                    fontSize: {
+                        "mono-data": ["14px", { lineHeight: "20px", letterSpacing: "-0.01em", fontWeight: "500" }],
+                        "h2": ["24px", { lineHeight: "32px", letterSpacing: "-0.01em", fontWeight: "600" }],
+                        "body-md": ["14px", { lineHeight: "20px", letterSpacing: "0", fontWeight: "400" }],
+                        "body-lg": ["16px", { lineHeight: "24px", letterSpacing: "0", fontWeight: "400" }],
+                        "h1": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "label-caps": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600" }],
+                        "h3": ["20px", { lineHeight: "28px", letterSpacing: "0", fontWeight: "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Details/Summary default arrow hiding for custom chevron */
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden">
+<!-- Mobile Header (Simplified from TopNavBar concept) -->
+<header class="fixed top-0 left-0 w-full h-16 bg-surface-container-lowest/80 backdrop-blur-md border-b border-surface-variant z-40 flex justify-between items-center px-margin_mobile">
+<div class="font-h3 text-h3 font-bold text-on-surface tracking-tight">Hermes AI</div>
+<div class="flex items-center gap-md">
+<button class="w-8 h-8 flex items-center justify-center rounded-full bg-surface-container-high text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">smart_toy</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant bg-surface-variant">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="close up portrait of a professional man in subtle studio lighting with dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqRbmYLULPcVLg4mVPUkYlHfL4_O-QsUA3QXhc4bJUZVHsuvhycRMr6i21E8OgmtQrAIqr63un5f5n5KZwqmBQgFFX8AyoV7nq4CiX_lL4OiUwSZEDBIrLxcd2rUYv6tgH4xY7ch1ULHsKd768nJNEGHt85YkrWmP5eTdofi3pgO6TBmNGrm-MbVlIn7afRpil_TqbLARvgWd9XpMCLLhodDYt80rGa78S77yIRSiplmjI5vs7tDF99gEYejtxFllIUtKGVh9IDoM"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-[88px] pb-[100px] px-margin_mobile flex flex-col gap-lg">
+<!-- Page Title & Context -->
+<header>
+<h1 class="font-h1 text-h1 text-on-surface mb-xs">Weekly Review</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Model Insight: Oct 23 - Oct 29</p>
+</header>
+<!-- TL;DR AI Summary (Glassmorphic Elevated Layer) -->
+<section class="relative bg-surface-container/60 backdrop-blur-md rounded-xl border border-outline-variant p-md shadow-[0_4px_20px_rgba(0,102,255,0.15)] overflow-hidden">
+<!-- Decorative AI Glow -->
+<div class="absolute -top-12 -right-12 w-40 h-40 bg-primary-container/20 rounded-full blur-[40px] pointer-events-none"></div>
+<div class="flex items-center gap-sm mb-sm relative z-10">
+<span class="material-symbols-outlined text-primary-container text-[18px]">psychology</span>
+<h2 class="font-label-caps text-label-caps text-primary-container uppercase">AI Synthesis</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface relative z-10">
+                Quantitative models indicate a high-probability rotation into decentralized compute infrastructure. Macro volatility remains elevated; hedging large-cap positions recommended while accumulating high-conviction utility assets.
+            </p>
+</section>
+<!-- Highlighted Stats Bento Grid -->
+<section class="grid grid-cols-2 gap-md">
+<!-- Stat Card 1 -->
+<div class="bg-surface-container-low rounded-lg border border-outline-variant p-md flex flex-col justify-center items-center relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-[2px] bg-primary-container"></div>
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-xs text-center">Proj. ROI (7D)</span>
+<span class="font-h2 text-h2 text-primary-container font-mono-data">+4.8%</span>
+</div>
+<!-- Stat Card 2 -->
+<div class="bg-surface-container-low rounded-lg border border-outline-variant p-md flex flex-col justify-center items-center">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-xs text-center">Volatility Index</span>
+<span class="font-h2 text-h2 text-tertiary">Elevated</span>
+</div>
+</section>
+<!-- Accordions for High-Density Info -->
+<section class="flex flex-col gap-sm">
+<!-- Accordion: Sector Performance -->
+<details class="group bg-surface-container-highest rounded-lg border border-outline-variant overflow-hidden" open="">
+<summary class="flex items-center justify-between p-md cursor-pointer select-none bg-surface-container hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant">donut_small</span>
+<h3 class="font-h3 text-h3 text-on-surface">Sector Performance</h3>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-open:rotate-180 transition-transform duration-200">expand_more</span>
+</summary>
+<div class="p-md bg-surface-container-low border-t border-outline-variant flex flex-col gap-md">
+<!-- Inline Bar Chart 1 -->
+<div class="flex items-center justify-between">
+<span class="font-body-md text-body-md text-on-surface w-[80px]">Compute</span>
+<div class="flex-1 mx-sm h-2 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 82%;"></div>
+</div>
+<span class="font-mono-data text-mono-data text-primary-container w-[50px] text-right">+8.2%</span>
+</div>
+<!-- Inline Bar Chart 2 -->
+<div class="flex items-center justify-between">
+<span class="font-body-md text-body-md text-on-surface w-[80px]">Storage</span>
+<div class="flex-1 mx-sm h-2 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary-fixed-dim rounded-full" style="width: 45%;"></div>
+</div>
+<span class="font-mono-data text-mono-data text-on-surface w-[50px] text-right">+2.1%</span>
+</div>
+<!-- Inline Bar Chart 3 -->
+<div class="flex items-center justify-between">
+<span class="font-body-md text-body-md text-on-surface w-[80px]">DeFi AI</span>
+<div class="flex-1 mx-sm h-2 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-error rounded-full" style="width: 30%;"></div>
+</div>
+<span class="font-mono-data text-mono-data text-error w-[50px] text-right">-1.4%</span>
+</div>
+</div>
+</details>
+<!-- Accordion: Top Algorithmic Picks -->
+<details class="group bg-surface-container-highest rounded-lg border border-outline-variant overflow-hidden">
+<summary class="flex items-center justify-between p-md cursor-pointer select-none bg-surface-container hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant">target</span>
+<h3 class="font-h3 text-h3 text-on-surface">Top Algo Picks</h3>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-open:rotate-180 transition-transform duration-200">expand_more</span>
+</summary>
+<div class="p-sm bg-surface-container-low border-t border-outline-variant flex flex-col gap-xs">
+<!-- Pick Item 1 -->
+<div class="flex items-center justify-between p-sm rounded bg-surface-container border border-surface-variant">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded bg-primary-container/10 flex items-center justify-center border border-primary-container/20">
+<span class="font-mono-data text-[12px] text-primary-container font-bold">RNDR</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface font-medium">Render Net</span>
+</div>
+<span class="px-2 py-1 bg-primary-container/10 text-primary-container rounded font-label-caps text-[10px] uppercase border border-primary-container/20">Strong Buy</span>
+</div>
+<!-- Pick Item 2 -->
+<div class="flex items-center justify-between p-sm rounded bg-surface-container border border-surface-variant">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded bg-surface-variant flex items-center justify-center border border-outline-variant">
+<span class="font-mono-data text-[12px] text-on-surface font-bold">FET</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface font-medium">Fetch.ai</span>
+</div>
+<span class="px-2 py-1 bg-surface-variant text-on-surface-variant rounded font-label-caps text-[10px] uppercase border border-outline-variant">Accumulate</span>
+</div>
+</div>
+</details>
+</section>
+</main>
+<!-- BottomNavBar (From JSON specs) -->
+<!-- Applying exact style string keys from JSON specification -->
+<nav class="fixed bottom-0 w-full z-50 md:hidden border-t border-[#30363D] bg-[#161B22] dark:bg-[#161B22] shadow-[0_-4px_12px_rgba(0,0,0,0.5)] flex justify-around items-center h-16 pb-safe">
+<!-- Tab 0: Home -->
+<button class="flex flex-col items-center justify-center text-slate-500 active:bg-[#0066FF]/10 Touch: scale-95 transition-transform w-full h-full">
+<span class="material-symbols-outlined text-[24px] mb-[2px]">home</span>
+<span class="text-[10px] font-medium font-['Inter']">Home</span>
+</button>
+<!-- Tab 1: Portfolio -->
+<button class="flex flex-col items-center justify-center text-slate-500 active:bg-[#0066FF]/10 Touch: scale-95 transition-transform w-full h-full">
+<span class="material-symbols-outlined text-[24px] mb-[2px]">account_balance_wallet</span>
+<span class="text-[10px] font-medium font-['Inter']">Portfolio</span>
+</button>
+<!-- Tab 2: Insights (Active Tab based on semantic intent "Review/Insights") -->
+<button class="flex flex-col items-center justify-center text-[#0066FF] active:bg-[#0066FF]/10 Touch: scale-95 transition-transform w-full h-full">
+<span class="material-symbols-outlined text-[24px] mb-[2px]" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="text-[10px] font-medium font-['Inter']">Insights</span>
+</button>
+<!-- Tab 3: Markets -->
+<button class="flex flex-col items-center justify-center text-slate-500 active:bg-[#0066FF]/10 Touch: scale-95 transition-transform w-full h-full">
+<span class="material-symbols-outlined text-[24px] mb-[2px]">bar_chart</span>
+<span class="text-[10px] font-medium font-['Inter']">Markets</span>
+</button>
+</nav>
+</body></html>
