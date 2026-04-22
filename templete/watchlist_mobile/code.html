@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hermes AI - Watchlist</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#ffdbd0",
+                        "surface-container-highest": "#32343e",
+                        "secondary": "#d1bcff",
+                        "primary-fixed": "#dae1ff",
+                        "primary-fixed-dim": "#b3c5ff",
+                        "surface-variant": "#32343e",
+                        "inverse-on-surface": "#2e303a",
+                        "on-surface-variant": "#c2c6d8",
+                        "surface-container-low": "#191b24",
+                        "surface-container": "#1d1f28",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed-variant": "#832600",
+                        "secondary-container": "#7000ff",
+                        "surface-container-lowest": "#0b0e16",
+                        "primary": "#b3c5ff",
+                        "tertiary-fixed-dim": "#ffb59d",
+                        "secondary-fixed-dim": "#d1bcff",
+                        "on-background": "#e1e2ee",
+                        "on-secondary": "#3c0090",
+                        "on-tertiary": "#5d1900",
+                        "outline-variant": "#424656",
+                        "on-tertiary-container": "#fff6f4",
+                        "on-surface": "#e1e2ee",
+                        "inverse-primary": "#0054d6",
+                        "on-tertiary-fixed": "#390c00",
+                        "on-primary": "#002b75",
+                        "error-container": "#93000a",
+                        "outline": "#8c90a1",
+                        "on-primary-fixed-variant": "#003fa4",
+                        "on-secondary-fixed": "#23005b",
+                        "error": "#ffb4ab",
+                        "surface-tint": "#b3c5ff",
+                        "on-primary-container": "#f8f7ff",
+                        "tertiary-container": "#cc4204",
+                        "primary-container": "#0066ff",
+                        "inverse-surface": "#e1e2ee",
+                        "on-error-container": "#ffdad6",
+                        "surface": "#10131c",
+                        "secondary-fixed": "#e9ddff",
+                        "on-secondary-fixed-variant": "#5700c9",
+                        "surface-bright": "#363943",
+                        "background": "#10131c",
+                        "tertiary": "#ffb59d",
+                        "on-primary-fixed": "#001849",
+                        "on-secondary-container": "#ddcdff",
+                        "surface-dim": "#10131c",
+                        "surface-container-high": "#272a33"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "lg": "24px",
+                        "margin_desktop": "40px",
+                        "base": "8px",
+                        "margin_mobile": "16px",
+                        "gutter": "24px",
+                        "xs": "4px",
+                        "md": "16px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "h3": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "h2": ["Inter"],
+                        "h1": ["Inter"],
+                        "body-md": ["Inter"],
+                        "mono-data": ["monospace"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "h3": ["20px", { "lineHeight": "28px", "letterSpacing": "0", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "h2": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "h1": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0", "fontWeight": "400" }],
+                        "mono-data": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .ai-glow {
+            box-shadow: 0 4px 20px rgba(0, 102, 255, 0.15);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md antialiased md:hidden pb-[80px]">
+<!-- Header -->
+<header class="sticky top-0 z-40 bg-background/90 backdrop-blur-md border-b border-surface-container-high px-margin_mobile py-md">
+<div class="flex justify-between items-center">
+<div>
+<h1 class="font-h2 text-h2 text-on-surface">Watchlist</h1>
+</div>
+<div class="flex gap-sm">
+<button class="p-2 text-outline hover:text-on-surface transition-colors rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">search</span>
+</button>
+<button class="p-2 text-outline hover:text-on-surface transition-colors rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Filter Pills -->
+<div class="flex gap-sm mt-md overflow-x-auto hide-scrollbar pb-xs">
+<button class="px-md py-sm bg-surface-container-highest text-on-surface rounded-full font-label-caps text-label-caps whitespace-nowrap">All Assets</button>
+<button class="px-md py-sm bg-transparent border border-outline-variant text-on-surface-variant rounded-full font-label-caps text-label-caps whitespace-nowrap">Crypto</button>
+<button class="px-md py-sm bg-transparent border border-outline-variant text-on-surface-variant rounded-full font-label-caps text-label-caps whitespace-nowrap">Equities</button>
+<button class="px-md py-sm bg-transparent border border-outline-variant text-on-surface-variant rounded-full font-label-caps text-label-caps whitespace-nowrap">FX</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="p-margin_mobile flex flex-col gap-md">
+<!-- AI Insight Card -->
+<div class="bg-surface-container-low rounded-xl border border-[#30363D] p-md relative overflow-hidden ai-glow backdrop-blur-[8px]">
+<div class="absolute top-0 right-0 p-sm opacity-20">
+<span class="material-symbols-outlined text-[64px] text-primary-container" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</div>
+<div class="flex items-center gap-sm mb-sm relative z-10">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<h3 class="font-label-caps text-label-caps text-primary-container">AI Insight</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant relative z-10">Momentum shift detected in <span class="text-on-surface font-mono-data">$ETH</span> volume. Predictive model suggests short-term volatility increase.</p>
+</div>
+<!-- Watchlist Items -->
+<div class="flex flex-col gap-sm">
+<!-- Asset Card 1 -->
+<div class="bg-surface-container rounded-lg border border-[#30363D] p-md flex items-center justify-between relative overflow-hidden group">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-surface">currency_bitcoin</span>
+</div>
+<div>
+<div class="flex items-baseline gap-sm">
+<span class="font-h3 text-h3 text-on-surface">BTC</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Bitcoin</span>
+</div>
+<div class="font-mono-data text-mono-data text-on-surface-variant mt-xs">Vol: 24.5B</div>
+</div>
+</div>
+<div class="text-right">
+<div class="font-mono-data text-mono-data text-on-surface">$64,230.50</div>
+<div class="font-mono-data text-mono-data text-[#4ade80] flex items-center justify-end gap-xs mt-xs">
+<span class="material-symbols-outlined text-[16px]">arrow_upward</span>
+                        +2.4%
+                    </div>
+</div>
+<!-- Swipe Actions Placeholder (Visual only for static HTML) -->
+<div class="absolute inset-y-0 left-0 w-2 bg-[#ef4444] hidden group-active:block"></div>
+<div class="absolute inset-y-0 right-0 w-2 bg-[#4ade80] hidden group-active:block"></div>
+</div>
+<!-- Asset Card 2 -->
+<div class="bg-surface-container rounded-lg border border-[#30363D] p-md flex items-center justify-between relative overflow-hidden group">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center shrink-0">
+<img alt="Ethereum Logo" class="w-full h-full object-cover rounded-full opacity-80 mix-blend-screen" data-alt="Stylized glowing blue ethereum diamond logo on dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1eYrAAMnbXx_Bi_hrsUX3PRhTM4bRMhuu6inyP6qK6j6ucKuZGP7L51jqk4BFaN0tAanM2p9mJ9QNTML-j0zri77CVXik52xK_JrRkSkDBAo6NFOyRmLCd_jCHjp0VuJE1g8qQMYNWq0JzVmMukgGRxuNIeoF7zrjaGZ-W4_FDVtTXsbiRlzvBkowVpF7OOPX9_pHSodZFdNsjqL7idLBcZnW9t4LCa6vAIOchexV2_wG3ExuKCnZzEXtwZGlJUzfl0jVFWl1W44"/>
+</div>
+<div>
+<div class="flex items-baseline gap-sm">
+<span class="font-h3 text-h3 text-on-surface">ETH</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Ethereum</span>
+</div>
+<div class="font-mono-data text-mono-data text-on-surface-variant mt-xs">Vol: 12.1B</div>
+</div>
+</div>
+<div class="text-right">
+<div class="font-mono-data text-mono-data text-on-surface">$3,450.20</div>
+<div class="font-mono-data text-mono-data text-[#ef4444] flex items-center justify-end gap-xs mt-xs">
+<span class="material-symbols-outlined text-[16px]">arrow_downward</span>
+                        -1.2%
+                    </div>
+</div>
+</div>
+<!-- Asset Card 3 -->
+<div class="bg-surface-container rounded-lg border border-[#30363D] p-md flex items-center justify-between relative overflow-hidden group">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center shrink-0 text-on-surface font-h3">
+                        S
+                    </div>
+<div>
+<div class="flex items-baseline gap-sm">
+<span class="font-h3 text-h3 text-on-surface">SOL</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Solana</span>
+</div>
+<div class="font-mono-data text-mono-data text-on-surface-variant mt-xs">Vol: 4.2B</div>
+</div>
+</div>
+<div class="text-right">
+<div class="font-mono-data text-mono-data text-on-surface">$145.80</div>
+<div class="font-mono-data text-mono-data text-[#4ade80] flex items-center justify-end gap-xs mt-xs">
+<span class="material-symbols-outlined text-[16px]">arrow_upward</span>
+                        +5.7%
+                    </div>
+</div>
+</div>
+<!-- Asset Card 4 -->
+<div class="bg-surface-container rounded-lg border border-[#30363D] p-md flex items-center justify-between relative overflow-hidden group">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center shrink-0 text-on-surface font-h3">
+                        A
+                    </div>
+<div>
+<div class="flex items-baseline gap-sm">
+<span class="font-h3 text-h3 text-on-surface">AAPL</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Apple Inc.</span>
+</div>
+<div class="font-mono-data text-mono-data text-on-surface-variant mt-xs">Vol: 55M</div>
+</div>
+</div>
+<div class="text-right">
+<div class="font-mono-data text-mono-data text-on-surface">$173.50</div>
+<div class="font-mono-data text-mono-data text-on-surface-variant flex items-center justify-end gap-xs mt-xs">
+<span class="material-symbols-outlined text-[16px]">horizontal_rule</span>
+                        0.0%
+                    </div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button -->
+<button class="fixed bottom-[100px] right-margin_mobile w-14 h-14 bg-primary-container text-white rounded-full shadow-lg flex items-center justify-center z-40 hover:bg-inverse-primary transition-colors">
+<span class="material-symbols-outlined text-[28px]">add</span>
+</button>
+<!-- BottomNavBar (Generated from JSON) -->
+<nav class="fixed bottom-0 w-full z-50 border-slate-800 bg-slate-950/95 backdrop-blur-lg shadow-[0_-4px_20px_rgba(0,0,0,0.5)] lg:hidden flex justify-around items-center h-20 pb-safe px-4 tap-highlight-transparent">
+<a class="flex flex-col items-center gap-1 text-blue-500 active:bg-slate-900 rounded-lg p-2" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-[10px] font-medium font-inter uppercase tracking-widest text-blue-600">Watchlist</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500 active:bg-slate-900 rounded-lg p-2" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">pie_chart</span>
+<span class="text-[10px] font-medium font-inter uppercase tracking-widest text-blue-600">Portfolio</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500 active:bg-slate-900 rounded-lg p-2" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">psychology</span>
+<span class="text-[10px] font-medium font-inter uppercase tracking-widest text-blue-600">AI Insights</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500 active:bg-slate-900 rounded-lg p-2" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">settings</span>
+<span class="text-[10px] font-medium font-inter uppercase tracking-widest text-blue-600">Settings</span>
+</a>
+</nav>
+</body></html>
