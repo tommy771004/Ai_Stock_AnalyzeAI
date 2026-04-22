@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hermes AI - Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#ffdbd0",
+                        "surface-container-highest": "#32343e",
+                        "secondary": "#d1bcff",
+                        "primary-fixed": "#dae1ff",
+                        "primary-fixed-dim": "#b3c5ff",
+                        "surface-variant": "#32343e",
+                        "inverse-on-surface": "#2e303a",
+                        "on-surface-variant": "#c2c6d8",
+                        "surface-container-low": "#191b24",
+                        "surface-container": "#1d1f28",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed-variant": "#832600",
+                        "secondary-container": "#7000ff",
+                        "surface-container-lowest": "#0b0e16",
+                        "primary": "#b3c5ff",
+                        "tertiary-fixed-dim": "#ffb59d",
+                        "secondary-fixed-dim": "#d1bcff",
+                        "on-background": "#e1e2ee",
+                        "on-secondary": "#3c0090",
+                        "on-tertiary": "#5d1900",
+                        "outline-variant": "#424656",
+                        "on-tertiary-container": "#fff6f4",
+                        "on-surface": "#e1e2ee",
+                        "inverse-primary": "#0054d6",
+                        "on-tertiary-fixed": "#390c00",
+                        "on-primary": "#002b75",
+                        "error-container": "#93000a",
+                        "outline": "#8c90a1",
+                        "on-primary-fixed-variant": "#003fa4",
+                        "on-secondary-fixed": "#23005b",
+                        "error": "#ffb4ab",
+                        "surface-tint": "#b3c5ff",
+                        "on-primary-container": "#f8f7ff",
+                        "tertiary-container": "#cc4204",
+                        "primary-container": "#0066ff",
+                        "inverse-surface": "#e1e2ee",
+                        "on-error-container": "#ffdad6",
+                        "surface": "#10131c",
+                        "secondary-fixed": "#e9ddff",
+                        "on-secondary-fixed-variant": "#5700c9",
+                        "surface-bright": "#363943",
+                        "background": "#10131c",
+                        "tertiary": "#ffb59d",
+                        "on-primary-fixed": "#001849",
+                        "on-secondary-container": "#ddcdff",
+                        "surface-dim": "#10131c",
+                        "surface-container-high": "#272a33"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "lg": "24px",
+                        "margin_desktop": "40px",
+                        "base": "8px",
+                        "margin_mobile": "16px",
+                        "gutter": "24px",
+                        "xs": "4px",
+                        "md": "16px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "h3": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "h2": ["Inter"],
+                        "h1": ["Inter"],
+                        "body-md": ["Inter"],
+                        "mono-data": ["monospace"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "h3": ["20px", { "lineHeight": "28px", "letterSpacing": "0", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "h2": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "h1": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0", "fontWeight": "400" }],
+                        "mono-data": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(22, 27, 34, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid #30363D;
+        }
+        .ai-glow {
+            box-shadow: 0 4px 20px rgba(0, 102, 255, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen font-body-md text-body-md antialiased overflow-x-hidden flex flex-col md:flex-row">
+<nav class="bg-slate-950 fixed left-0 top-0 h-full w-[280px] border-r border-slate-800 flat no-shadows hidden lg:flex flex-col py-8 z-50">
+<div class="px-6 mb-8 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-h3 text-h3">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">insights</span>
+</div>
+<div>
+<h1 class="text-xl font-black tracking-tighter text-slate-50 leading-tight">Hermes AI</h1>
+<p class="text-[10px] text-slate-400 font-label-caps uppercase tracking-wider">Institutional Grade</p>
+</div>
+</div>
+<div class="px-4 mb-6">
+<button class="w-full bg-primary-container text-on-primary-container hover:bg-blue-700 transition-colors duration-200 py-3 rounded-lg font-body-md text-body-md font-medium flex items-center justify-center gap-2 active:scale-[0.98]">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                New Trade
+            </button>
+</div>
+<ul class="flex flex-col gap-1 px-3 flex-1 font-inter antialiased text-sm font-medium tracking-tight">
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-slate-900 transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[20px]">star</span>
+                    Watchlist
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-slate-900 transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[20px]">show_chart</span>
+                    Markets
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-slate-900 transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[20px]">pie_chart</span>
+                    Portfolio
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-slate-900 transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[20px]">receipt_long</span>
+                    Transactions
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-blue-500 border-l-4 border-blue-600 bg-blue-600/5 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+                    Settings
+                </a>
+</li>
+</ul>
+<div class="mt-auto px-3">
+<div class="h-px w-full bg-slate-800 mb-4"></div>
+<ul class="flex flex-col gap-1 font-inter antialiased text-sm font-medium tracking-tight">
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-slate-900 transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[20px]">help</span>
+                        Support
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-slate-900 transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[20px]">code</span>
+                        API
+                    </a>
+</li>
+</ul>
+</div>
+</nav>
+<header class="bg-slate-950/80 backdrop-blur-md fixed top-0 w-full z-40 border-b border-slate-800 shadow-sm flex justify-between items-center h-16 px-6 lg:pl-[304px]">
+<div class="flex items-center gap-4 lg:hidden">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-h3 text-h3">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">insights</span>
+</div>
+<span class="text-lg font-bold text-slate-50">Hermes AI</span>
+</div>
+<div class="hidden lg:flex items-center gap-6 font-inter text-sm">
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-[18px]">search</span>
+<input class="w-full bg-surface-container-low border border-slate-800 rounded-lg pl-10 pr-4 py-1.5 text-sm text-slate-200 focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all placeholder:text-slate-500" placeholder="Search Markets..." type="text"/>
+</div>
+<a class="text-slate-400 hover:text-blue-400 cursor-pointer transition-all" href="#">Markets</a>
+<a class="text-slate-400 hover:text-blue-400 cursor-pointer transition-all" href="#">Insights</a>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden sm:flex items-center gap-3 text-slate-400">
+<button class="hover:text-blue-400 cursor-pointer transition-all active:scale-[0.98]"><span class="material-symbols-outlined text-[20px]">smart_toy</span></button>
+<button class="hover:text-blue-400 cursor-pointer transition-all active:scale-[0.98]"><span class="material-symbols-outlined text-[20px]">notifications</span></button>
+<button class="text-blue-500 cursor-pointer transition-all active:scale-[0.98]"><span class="material-symbols-outlined text-[20px]">account_circle</span></button>
+</div>
+<button class="bg-primary-container/10 text-primary border border-primary-container/30 hover:bg-primary-container/20 transition-colors px-4 py-1.5 rounded-lg text-sm font-medium">Connect Wallet</button>
+</div>
+</header>
+<main class="flex-1 lg:ml-[280px] pt-24 pb-24 lg:pb-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+<div class="mb-8">
+<h1 class="font-h2 text-h2 text-slate-50">Settings</h1>
+<p class="text-slate-400 mt-1">Manage your account preferences and data integrations.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<aside class="lg:col-span-3">
+<nav class="flex lg:flex-col gap-2 overflow-x-auto pb-2 lg:pb-0 scrollbar-hide">
+<button class="flex items-center gap-3 px-4 py-2.5 rounded-lg bg-surface-container-high text-slate-50 font-medium text-sm border border-slate-700 whitespace-nowrap lg:whitespace-normal">
+<span class="material-symbols-outlined text-[18px]">person</span>
+                        Profile
+                    </button>
+<button class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-slate-400 hover:bg-surface-container hover:text-slate-200 transition-colors font-medium text-sm whitespace-nowrap lg:whitespace-normal">
+<span class="material-symbols-outlined text-[18px]">notifications_active</span>
+                        Notifications
+                    </button>
+<button class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-slate-400 hover:bg-surface-container hover:text-slate-200 transition-colors font-medium text-sm whitespace-nowrap lg:whitespace-normal">
+<span class="material-symbols-outlined text-[18px]">cable</span>
+                        Data Connections
+                    </button>
+<button class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-slate-400 hover:bg-surface-container hover:text-slate-200 transition-colors font-medium text-sm whitespace-nowrap lg:whitespace-normal">
+<span class="material-symbols-outlined text-[18px]">security</span>
+                        Security
+                    </button>
+</nav>
+</aside>
+<div class="lg:col-span-9 space-y-6">
+<section class="glass-card rounded-xl overflow-hidden">
+<div class="p-6 border-b border-slate-800">
+<h2 class="font-h3 text-h3 text-slate-50">Profile Information</h2>
+<p class="text-slate-400 text-sm mt-1">Update your personal details and public profile.</p>
+</div>
+<div class="p-6 space-y-6">
+<div class="flex items-center gap-6">
+<div class="w-20 h-20 rounded-full bg-surface-container-high border-2 border-slate-700 flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-4xl text-slate-500">person</span>
+</div>
+<div>
+<button class="bg-surface-container-high hover:bg-surface-bright border border-slate-700 text-slate-200 px-4 py-2 rounded-lg text-sm font-medium transition-colors">Change Avatar</button>
+<p class="text-xs text-slate-500 mt-2">JPG, GIF or PNG. 1MB max.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="block text-sm font-medium text-slate-300">First Name</label>
+<input class="w-full bg-surface-container-lowest border border-slate-700 rounded-lg px-4 py-2.5 text-slate-200 focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container/50 transition-all" type="text" value="Alexander"/>
+</div>
+<div class="space-y-2">
+<label class="block text-sm font-medium text-slate-300">Last Name</label>
+<input class="w-full bg-surface-container-lowest border border-slate-700 rounded-lg px-4 py-2.5 text-slate-200 focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container/50 transition-all" type="text" value="Wright"/>
+</div>
+<div class="space-y-2 md:col-span-2">
+<label class="block text-sm font-medium text-slate-300">Email Address</label>
+<input class="w-full bg-surface-container-lowest border border-slate-700 rounded-lg px-4 py-2.5 text-slate-200 focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container/50 transition-all" type="email" value="alexander.w@example.com"/>
+</div>
+</div>
+</div>
+<div class="p-4 bg-surface-container-low border-t border-slate-800 flex justify-end">
+<button class="bg-primary-container text-on-primary-container hover:bg-blue-700 px-6 py-2 rounded-lg text-sm font-medium transition-colors">Save Changes</button>
+</div>
+</section>
+<section class="glass-card rounded-xl overflow-hidden ai-glow">
+<div class="p-6 border-b border-slate-800 flex items-center justify-between">
+<div>
+<h2 class="font-h3 text-h3 text-slate-50 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-[20px]">psychology</span>
+                                AI Assistant Preferences
+                            </h2>
+<p class="text-slate-400 text-sm mt-1">Configure how Hermes AI analyzes and presents data.</p>
+</div>
+<div class="px-3 py-1 rounded-full bg-primary-container/10 border border-primary-container/20 text-primary-container text-xs font-medium uppercase tracking-wider">Pro Feature</div>
+</div>
+<div class="p-6 space-y-5">
+<div class="flex items-center justify-between">
+<div>
+<h4 class="text-slate-200 font-medium">Aggressive Pattern Recognition</h4>
+<p class="text-slate-500 text-sm">Flag high-risk/high-reward setups with lower confidence thresholds.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<div class="h-px bg-slate-800"></div>
+<div class="flex items-center justify-between">
+<div>
+<h4 class="text-slate-200 font-medium">Sentiment Analysis Overlays</h4>
+<p class="text-slate-500 text-sm">Overlay social sentiment scores directly on market charts.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+</div>
+</section>
+<section class="glass-card rounded-xl overflow-hidden">
+<div class="p-6 border-b border-slate-800">
+<h2 class="font-h3 text-h3 text-slate-50">Data Connections</h2>
+<p class="text-slate-400 text-sm mt-1">Manage API keys and external data sources for deeper insights.</p>
+</div>
+<div class="p-6 space-y-6">
+<div class="p-4 border border-slate-700 rounded-lg bg-surface-container-low">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-300 text-[18px]">currency_bitcoin</span>
+</div>
+<div>
+<h4 class="text-slate-200 font-medium text-sm">Binance API</h4>
+<p class="text-slate-500 text-xs">Read-only access for portfolio tracking.</p>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-green-900/30 text-green-400 text-xs font-medium border border-green-800/50">Connected</span>
+</div>
+<div class="flex gap-2">
+<input class="flex-1 bg-surface-container-lowest border border-slate-800 rounded-lg px-3 py-1.5 text-slate-400 text-sm opacity-70" disabled="" type="password" value="************************"/>
+<button class="px-3 py-1.5 bg-surface-container-high hover:bg-surface-bright border border-slate-700 rounded-lg text-slate-300 text-sm transition-colors">Edit</button>
+</div>
+</div>
+<div class="p-4 border border-slate-700 border-dashed rounded-lg bg-surface-container-lowest/50 hover:bg-surface-container-low transition-colors cursor-pointer flex flex-col items-center justify-center py-8 text-center">
+<div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-slate-400">add_link</span>
+</div>
+<h4 class="text-slate-200 font-medium">Add New Connection</h4>
+<p class="text-slate-500 text-sm mt-1">Connect exchanges, wallets, or custom databases.</p>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+<nav class="bg-slate-950/95 backdrop-blur-lg fixed bottom-0 w-full z-50 border-t border-slate-800 shadow-[0_-4px_20px_rgba(0,0,0,0.5)] lg:hidden flex justify-around items-center h-20 pb-safe px-4 tap-highlight-transparent">
+<a class="text-slate-500 flex flex-col items-center gap-1 active:bg-slate-900 rounded-lg p-2 transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">star</span>
+<span class="text-[10px] font-medium font-inter uppercase tracking-widest">Watchlist</span>
+</a>
+<a class="text-slate-500 flex flex-col items-center gap-1 active:bg-slate-900 rounded-lg p-2 transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">pie_chart</span>
+<span class="text-[10px] font-medium font-inter uppercase tracking-widest">Portfolio</span>
+</a>
+<a class="text-slate-500 flex flex-col items-center gap-1 active:bg-slate-900 rounded-lg p-2 transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">psychology</span>
+<span class="text-[10px] font-medium font-inter uppercase tracking-widest">AI Insights</span>
+</a>
+<a class="text-blue-500 flex flex-col items-center gap-1 active:bg-slate-900 rounded-lg p-2 transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="text-[10px] font-medium font-inter uppercase tracking-widest">Settings</span>
+</a>
+</nav>
+</body></html>
